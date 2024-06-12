@@ -1,4 +1,3 @@
-test
 Example Voting App
 =========
 
