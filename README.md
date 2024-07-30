@@ -7,6 +7,8 @@ Example Voting App
 =========
 [![Build Status](http://34.30.155.181:8080/buildStatus/icon?job=instavote%2Fworker-build)](http://34.30.155.181:8080/view/all/job/instavote/job/worker-build/)
 
+[![Build Status](http://34.30.155.181:8080/buildStatus/icon?job=instavote%2Fworker-test&subject=UnitTest)](http://34.30.155.181:8080/view/all/job/instavote/job/worker-test/)
+
 Getting started
 ---------------
 
