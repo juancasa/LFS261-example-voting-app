@@ -9,7 +9,7 @@ This is a sample voting app.
 
 [![Build Status](http://34.30.155.181:8080/buildStatus/icon?job=instavote%2Fworker-test&subject=UnitTest)](http://34.30.155.181:8080/view/all/job/instavote/job/worker-test/)
 
-## Getting started
+Getting started
 ---------------
 
 Download [Docker](https://www.docker.com/products/overview). If you are on Mac or Windows, [Docker Compose](https://docs.docker.com/compose) will be automatically installed. On Linux, make sure you have the latest version of [Compose](https://docs.docker.com/compose/install/). If you're using [Docker for Windows](https://docs.docker.com/docker-for-windows/) on Windows 10 pro or later, you must also [switch to Linux containers](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
