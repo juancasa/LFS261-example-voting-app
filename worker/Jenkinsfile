@@ -22,7 +22,7 @@ pipeline {
 				changeset "**/worker/**"
 			}
 			steps{
-				echo 'Running Unit Tests on worker app'
+				echo 'Running Unit Tests on worker app..'
 				dir('worker'){
 					sh 'mvn clean test'
 				}
@@ -30,7 +30,7 @@ pipeline {
 		}
 		stage("package"){
 			when{
-				brance 'master'
+				branch 'master'
 				changeset "**/worker/**"
 			}
 			steps{
