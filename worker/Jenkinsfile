@@ -1,9 +1,14 @@
 pipeline {
-	agent any
-
-	tools{
-		maven 'maven 3.6.1'
+	agent {
+		docker{
+			image 'maven:3.9.8-sapmachine-21'
+			args '-v $HOME/.m2:/root/.m2'
+		}
 	}
+
+	// tools{
+	// 	maven 'maven 3.6.1'
+	// }
 	
 	stages{
 		stage("build"){
@@ -42,20 +47,25 @@ pipeline {
 			}
 		}
 	}
-	
 	post{
 		always{
-			echo 'Building multibranch pipeline for worker is completed..'
-		}
-		failure{
-			slackSend (
-				channel: "#instavote-cd", message: "Build Failed - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-				)
-		}
-		success{
-			slackSend (
-				channel: "#instavote-cd", message: "Build Succeeded - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-			)
+			echo 'the job is complete'
 		}
 	}
+
+	// post{
+	// 	always{
+	// 		echo 'Building multibranch pipeline for worker is completed..'
+	// 	}
+	// 	failure{
+	// 		slackSend (
+	// 			channel: "#instavote-cd", message: "Build Failed - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+	// 			)
+	// 	}
+	// 	success{
+	// 		slackSend (
+	// 			channel: "#instavote-cd", message: "Build Succeeded - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+	// 		)
+	// 	}
+	// }
 }
