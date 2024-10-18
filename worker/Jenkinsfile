@@ -25,11 +25,12 @@ pipeline {
 		}
 		stage("package"){
 			steps{
-			echo 'packaging worker app into a jar file'
-			dir('worker'){
-				sh 'mvn package -DskipTests'
-				archiveArtifacts artifacts: '**/target/*.jar',
-				fingerprint: true
+				echo 'packaging worker app into a jar file'
+				dir('worker'){
+					sh 'mvn package -DskipTests'
+					archiveArtifacts artifacts: '**/target/*.jar',
+					fingerprint: true
+				}
 			}
 		}
 		stage('docker-package'){
